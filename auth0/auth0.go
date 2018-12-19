@@ -171,7 +171,7 @@ func (a Auth0) Allowed(token string, perm introspector.Permission, expectedScope
 }
 
 func (a Auth0) getProfile(token string) (map[string]string, error) {
-	req, err := http.NewRequest("GET", "https://matteosuppo.eu.auth0.com/userinfo", nil)
+	req, err := http.NewRequest("GET", a.ProfileURL, nil)
 	if err != nil {
 		return nil, err
 	}
